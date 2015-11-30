@@ -42,6 +42,9 @@ int main(void) {
 
   printf("\n===============testRetrieve\n");
   testRetrieve();
+  
+  printf("\n================testDisplay\n");
+  
 
   printf("\n=================testDropTbl\n");
   testDropTable();
@@ -66,7 +69,7 @@ void testRetrieve(void) {
   struct Command* selectCmd = createSelectCommand("table", projection, compare);
 
   struct Table* results = retrieve(selectCmd);
-
+  printTable(results);
   assert(results->count == 1, "Did not retrieve correct number of records");
   assert(strcmp(results->name, "table") == 0, "Table name was not set in the resultset");
 

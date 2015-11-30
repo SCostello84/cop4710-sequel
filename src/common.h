@@ -105,3 +105,4 @@ void computePadding(char*, char*, int);
 int getRecordCount(FILE* file);
 int getFieldCount(char* buffer, int size);
 bool whereCompare(struct Where* compare);
+void printTable(struct Table* table);
